@@ -10,7 +10,7 @@ export function App() {
           <p className="text-center font-kumbh text-[#35FFEB]">{downMessage}</p>
         </div>
         <div class="absolute h-screen w-full z-[25] opacity-80 bg-gray-900"></div>
-        <video className="object-cover absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[10] min-w-full min-h-full size-auto " src="/src/assets/digital-background.mp4" loop autoPlay muted/>
+        <video className="object-cover absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[10] min-w-full min-h-full size-auto " src="digital-background.mp4" loop autoPlay muted/>
       </div>
     </>
   )
