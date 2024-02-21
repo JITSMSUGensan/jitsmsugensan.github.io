@@ -1,8 +1,11 @@
+import PageScreen from "./components/PageScreen";
+import Landing from "./pages/Landing";
+
 export function App() {
-  const isDown = true;
+  const websiteIsDown = false;
   const downMessage = "Coming Soon...";
 
-  if (isDown) return (
+  if (websiteIsDown) return (
     <>
       <div className="absolute top-0 bottom-0 h-screen w-full overflow-hidden">
         <div className="absolute bg-transparent top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-[100] flex flex-col space-y-4">
@@ -16,8 +19,8 @@ export function App() {
   )
 
   return (
-    <>
-      JITS Website Homepage
-    </>
+    <PageScreen>
+      <Landing/>
+    </PageScreen>
   )
 }
