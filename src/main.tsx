@@ -1,5 +1,12 @@
 import { render } from 'preact';
 import { App } from './app.tsx';
 import './index.css';
+import ThemeProvider from './app/ThemeProvider.tsx';
 
-render(<App />, document.getElementById('app')!)
+
+render(
+    <ThemeProvider initialTheme="dark">
+        <App />
+    </ThemeProvider>,
+    document.getElementById('app')!
+);

@@ -9,6 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@egjs/flicking": "^4.11.2",
     "preact": "^10.19.3"
   },
   "devDependencies": {

@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: 'class',
   theme: { // defaults to these values
     textFillColor: theme => theme('borderColor'),
     textStrokeColor: theme => theme('borderColor'),
