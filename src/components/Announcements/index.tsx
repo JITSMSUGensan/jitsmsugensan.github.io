@@ -67,11 +67,14 @@ export default function Announcements(){
             setRegen(regen + 1);
         }
         document.addEventListener("scroll", regenerate);
-        return () => document.removeEventListener("scroll", regenerate);
+        return () => {
+            document.removeEventListener("scroll", regenerate);
+        }
     }, [regen]);
 
     return <RegenContext.Provider value={regen}>
         <Grid />
+        <div ></div>
         <Grid direction="bottom"/>
     </RegenContext.Provider>
 }
