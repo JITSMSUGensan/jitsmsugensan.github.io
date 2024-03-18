@@ -7,11 +7,11 @@ import { useContext, useEffect } from "preact/hooks";
 export function App() {
   const context = useContext(Theme);
 
-  const websiteIsInactive = true;
+  const websiteIsInactive = false;
   const websiteInactivityTitle = "JITS WEBSITE";
   const websiteInactivitySubtitle = "Under Development...";
 
-  useEffect(() => { 
+  useEffect(() => {
     console.log("Theme is", context);
   }, [])
 
@@ -19,7 +19,7 @@ export function App() {
 
   return (
     <>
-      <NavigationBar/>
+      <NavigationBar />
       <Landing />
     </>
   )
