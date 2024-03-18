@@ -21,7 +21,7 @@ export default function HeadlineCarousel({ children }: { children: ReturnType<ty
 
 export function Gradient() {
     return (
-        <div className="absolute w-full h-full top-0 z-[50] bg-gradient-to-b from-transparent opacity-[26%] to-[#2FFFEA] dark:from-transparent dark:to-[#98DFD8] select-none pointer-events-none"></div>
+        <div className="absolute w-full h-full top-0 z-[50] bg-gradient-to-b from-transparent opacity-[36%] to-[#2FFFEA] dark:from-transparent dark:to-[#98DFD8] select-none pointer-events-none"></div>
     )
 }
 
@@ -41,7 +41,7 @@ export function CarouselDots() {
             {
                 Array.from({ length: length }, (_, i) => i).map((_, i) => {
                     return (
-                        <div className={`transition-all w-[10px] h-[10px] ${currentCarouselSlide === i ? " bg-teal-400" : "bg-white"} rounded-full transition-all cursor-pointer `} onClick={() => carousel.api?.scrollTo(i)}></div>
+                        <div className={`transition-all w-[10px] h-[10px] ${currentCarouselSlide === i ? " bg-teal-600" : "bg-white"} rounded-full transition-all cursor-pointer `} onClick={() => carousel.api?.scrollTo(i)}></div>
                     )
                 })
             }
@@ -58,7 +58,7 @@ export function HeadlineTag({ headlines }: { headlines: string[] }) {
     }, [carousel])
 
     return (
-        <p className="absolute bottom-[10px] z-[80] left-[15px] text-[24px] text-white">{headlines[currentCarouselSlide]}</p>
+        <p className="absolute bottom-[15px] z-[80] left-[15px] text-[14.5px] md:text-[24px] max-w-[calc(100vw-200px)] md:max-w-[386px] text-white">{headlines[currentCarouselSlide]}</p>
     )
 }
 
