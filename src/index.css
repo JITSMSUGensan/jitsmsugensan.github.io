@@ -13,6 +13,12 @@
 }
 
 @layer components {
+
+  .duration-5000 {
+    transition-duration: 5000ms !important;
+    animation-duration: 5000ms;
+  }
+
   .font-krona {
     font-family: 'Krona One', sans-serif;
   }

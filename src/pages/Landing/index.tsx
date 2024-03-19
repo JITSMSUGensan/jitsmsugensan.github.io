@@ -17,9 +17,9 @@ export default function Landing() {
                 </HeadlineCarousel>
                 <News>
                     <NewsItem
-                        title="JITS General Assembly 2023" 
-                        date="02/20/2024" 
-                        description="Lorem ipsum dolor sit amet consectetur. Adipiscing volutpat egestas mi gravida suspendisse arcu ut. Id augue purus sed tristique convallis rhoncus dignissim at faucibus. Pellentesque euismod donec nascetur sociis mattis. Malesuada." 
+                        title="JITS General Assembly 2023"
+                        date="02/20/2024"
+                        description="Lorem ipsum dolor sit amet consectetur. Adipiscing volutpat egestas mi gravida suspendisse arcu ut. Id augue purus sed tristique convallis rhoncus dignissim at faucibus. Pellentesque euismod donec nascetur sociis mattis. Malesuada."
                     />
                     <NewsItem
                         title="MSU-Gensan’s back gate reopens for students, employees only"
@@ -30,10 +30,10 @@ export default function Landing() {
                 <LandingBackground />
             </PageScreen>
             <PageScreen flush={true}>
-                <>
-                    <img src="/radialgradient1.png" className={`absolute top-0 left-0 translate-y-full`} />
-                    <Announcements/>
-                </>
+                <img src="/radialgradient1.png" className={`absolute top-0 left-0 translate-y-[80%]`} />
+                <div className="flex flex-col min-h-screen justify-center z-[50]">
+                    <Announcements />
+                </div>
             </PageScreen>
         </>
     )
