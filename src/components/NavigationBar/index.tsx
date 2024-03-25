@@ -35,10 +35,10 @@ interface NavigationDropdownContextType {
 
 export const NavigationDropdownContext = createContext<NavigationDropdownContextType>({
     open: false,
-    setOpen: () => {}
+    setOpen: () => { }
 });
 
-export function NavigationDropDown({ children, ...props} : { children: React.ReactNode, props?: any }) {
+export function NavigationDropDown({ children, ...props }: { children: React.ReactNode, props?: any }) {
     const [open, setOpen] = useState(false);
 
     const handleOpen = () => {
@@ -46,9 +46,9 @@ export function NavigationDropDown({ children, ...props} : { children: React.Rea
     }
 
     return (
-        <NavigationDropdownContext.Provider value={{open, setOpen}}>
+        <NavigationDropdownContext.Provider value={{ open, setOpen }}>
             <ul className="hidden md:flex flex-row">
-                { children }
+                {children}
             </ul>
             <div className="z-[20] relative block md:hidden border border-[#042926] dark:border-white p-3 opacity-100 hover:opacity-50 active:opacity-80 text-[#042926] dark:text-white" onClick={handleOpen}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className={` w-6 h-6 transition-all ${open ? "rotate-90 opacity-100" : "rotate-0 opacity-0"}`}>
@@ -59,7 +59,7 @@ export function NavigationDropDown({ children, ...props} : { children: React.Rea
                 </svg>
             </div>
             <div onClick={handleOpen} className={`z-[10] pt-[calc(82px+42px)] fixed top-0 left-0 min-h-screen min-w-full flex md:hidden transition-all ${open ? "opacity-100" : "opacity-0 pointer-events-none"} flex-col bg-[#B6F0FF] dark:bg-[#010D10]`}>
-                { children }
+                {children}
             </div>
         </NavigationDropdownContext.Provider>
     );
@@ -69,8 +69,8 @@ export default function NavigationBar() {
 
     return (
         <>
-            <nav className="fixed z-[1000] w-full h-[125px] flex flex-row items-center from-[#B6F0FF] via-[#b6f0ffc1] via-[50%] dark:from-[#030D0F] dark:via-[#030D0F] dark:via-[20%] to-transparent bg-gradient-to-b text-2xl transition-all">
-                <ul className="flex flex-row justify-between w-full mx-[28px] md:mx-[82px] dark:text-white text-black">
+            <nav className="fixed z-[1000] w-full h-[116px] flex flex-row items-center from-[#B6F0FF] via-[#b6f0ffc1] via-[50%] dark:from-[#030D0F] dark:via-[#030D0F] dark:via-[20%] to-transparent bg-gradient-to-b text-2xl transition-all">
+                <ul className="flex flex-row justify-between w-full px-[28px] md:px-[62px] dark:text-white text-black">
                     <li className="z-[20] flex flex-row items-center">
                         <p className="m-0 transition-all">JITS</p><p className="m-0 text-[#04A898] dark:text-[#36DFCF] transition-all">ORG</p>
                     </li>
@@ -86,7 +86,7 @@ export default function NavigationBar() {
                     </li>
                 </ul>
             </nav>
-            <div className="h-[125px] bg-[#B6F0FF] dark:bg-[#030D0F] transition-all"></div>
+            <div className="h-[116px] bg-[#B6F0FF] dark:bg-[#030D0F] transition-all"></div>
         </>
     )
 }

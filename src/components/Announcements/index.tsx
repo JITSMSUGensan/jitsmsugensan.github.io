@@ -69,8 +69,8 @@ export function Announcements({ children, ...props }: { children: ReturnType<typ
 
     return <div className="flex flex-col min-h-screen justify-center z-[50]">
         <Grid />
-        <div className="flex flex-col items-center min-h-[588px] bg-[#042926] dark:bg-[#4FB9AF] transition-all ease-in-out space-y-[42px] pb-[42px]">
-            <p className="text-[34px] delay-150 text-[#B6F0FF] dark:text-black font-krona min-h-[77px] border-b border-[#B6F0FF] dark:border-[#030D0F]">Announcements</p>
+        <div className="flex flex-col items-center min-h-[588px] bg-[#042926] dark:bg-[#4FB9AF] transition-all ease-in-out space-y-[42px] pt-[42px] pb-[42px]">
+            <p className="text-[34px] delay-150 text-[#B6F0FF] dark:text-black font-krona min-h-[77px] border-b border-[#B6F0FF] dark:border-[#030D0F]">ANNOUNCEMENTS</p>
             <div className="flex flex-col md:flex-row justify-center space-y-[42px] md:space-y-0 md:space-x-[64px]">
                 {children}
             </div>

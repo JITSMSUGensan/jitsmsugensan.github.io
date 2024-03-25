@@ -1,5 +1,5 @@
 import { createContext } from "preact";
-import { useEffect, useMemo, useState } from "preact/hooks";
+import { useContext, useEffect, useMemo, useState } from "preact/hooks";
 
 type ThemeProviderProps = {
     initialTheme: string;
@@ -13,15 +13,17 @@ type ThemeContext = {
 
 export const Theme = createContext<ThemeContext>({ theme: '', setTheme: () => { } });
 
-export default function ThemeProvider({ initialTheme, children }: ThemeProviderProps) { 
-    const [theme, setTheme] = useState( localStorage.getItem('theme') || initialTheme || "light" );
+export const useTheme = () => useContext(Theme);
+
+export default function ThemeProvider({ initialTheme, children }: ThemeProviderProps) {
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || initialTheme || "light");
     const themeControl = useMemo(() => { return { theme, setTheme } }, [theme]);
 
-    useEffect(() => { 
+    useEffect(() => {
         localStorage.setItem('theme', theme);
         if (theme === 'dark') {
             document.documentElement.classList.add('dark');
-        } else { 
+        } else {
             document.documentElement.classList.remove('dark');
         }
     }, [theme])

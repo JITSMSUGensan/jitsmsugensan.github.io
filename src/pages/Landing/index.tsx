@@ -9,7 +9,7 @@ import { RadialGradient } from "@/components/Gradient";
 export default function Landing() {
     return (
         <>
-            <PageScreen>
+            <PageScreen flushTop={true}>
                 <Welcome />
                 <HeadlineCarousel>
                     <Headline headline="Junior Information Technology Society General Assembly 2023" imagesrc="/sampleslide2.jpg" />
@@ -46,6 +46,9 @@ export default function Landing() {
                         description="A huge round of applause and a heartfelt congratulations to our exceptional Dean's Listers for achieving..."
                     />
                 </Announcements>
+            </PageScreen>
+            <PageScreen>
+
             </PageScreen>
         </>
     )
