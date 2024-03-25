@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "preact/hooks";
 import _ from "lodash";
-import { createContext } from "preact";
+import React, { ReactElement, ReactNode } from "preact/compat";
+import { JSXInternal } from "node_modules/preact/src/jsx";
 
 export function Cell({ chance }: { chance: number }) {
     const [value, setValue] = useState(_.random(chance, 1));
@@ -8,7 +9,7 @@ export function Cell({ chance }: { chance: number }) {
     useEffect(() => {
         const interval = setInterval(() => {
             setValue(_.random(chance, 1));
-        }, _.random(1000, 2500));
+        }, _.random(4500, 10000));
         return () => clearInterval(interval);
     }, [chance])
 
@@ -16,17 +17,6 @@ export function Cell({ chance }: { chance: number }) {
 }
 
 export function Column({ direction = "top" }: { direction?: "top" | "bottom" }) {
-    // const regen = useRegen();
-    // const [column, setColumn] = useState<any>([]);
-
-    // useEffect(() => {
-    //     const currentGrid: number[] = [];
-    //     for (let i = 0; i < 5; i++) {
-    //         currentGrid.push(_.random(((i + 1) / 5), 1));
-    //     }
-    //     setColumn(direction === "top" ? currentGrid : currentGrid.reverse());
-    // }, []);
-
     return <div className="flex flex-col">
         {
             direction === "top" ? Array.from({ length: 5 }, (_, i) => i).map((_, index) => {
@@ -37,11 +27,6 @@ export function Column({ direction = "top" }: { direction?: "top" | "bottom" }) 
                     return <Cell chance={((index + 1) / 5)} />
                 }).reverse()
         }
-        {/* {
-            column.map((value: any, index: number) => {
-                return <div key={index} className={`size-[20px] duration-500 ease-in-out transition-all bg-[#042926] dark:bg-[#4FB9AF] ${value > 0.85 ? " scale-100" : "scale-0"}`}></div>
-            })
-        } */}
     </div>
 }
 
@@ -66,43 +51,31 @@ export function Grid({ direction = "top" }: { direction?: "top" | "bottom" }) {
     </div></>
 }
 
-export const RegenContext = createContext<number>(0);
-
-export const useRegen = () => {
-    const regen = useContext(RegenContext);
-    return regen;
+export function Announcement({ imageSrc, description, ...props }: { imageSrc: string, description: string, props?: any }) {
+    return (
+        <div className="relative border border-[#B6F0FF] dark:border-[#030D0F] min-h-[591px] max-w-full md:max-w-[450px] p-[12px] group space-y-[12px] cursor-pointer">
+            <img src={imageSrc} className="w-full aspect-auto object-cover" />
+            <p className="font-krona text-[16px] text-[#B6F0FF] dark:text-black">{description}</p>
+            <div className="absolute bottom-[20px] right-[20px] w-full flex flex-row justify-end">
+                <button className="relative py-[8px] font-krona min-w-[149px] text-[#B6F0FF] dark:text-black">
+                    More Info&gt;&gt;
+                    <div className="absolute bottom-0 min-h-[1px] w-0 group-hover:w-full transition-all bg-[#B6F0FF] dark:bg-[#030D0F]"></div>
+                </button>
+            </div>
+        </div>)
 }
 
-export default function Announcements() {
-    const [regen, setRegen] = useState(0);
+export function Announcements({ children, ...props }: { children: ReturnType<typeof Announcement> | ReturnType<typeof Announcement>[] | undefined, props?: any }) {
 
-    useEffect(() => {
-        const regenerate = () => {
-            // setRegen(regen + 1);
-        }
-        const regenerateInterval = setInterval(regenerate, 500);
-        // document.addEventListener("scroll", regenerate);
-        return () => {
-            clearInterval(regenerateInterval);
-            // document.removeEventListener("scroll", regenerate);
-        }
-    }, [regen]);
-
-    return <RegenContext.Provider value={regen}>
+    return <div className="flex flex-col min-h-screen justify-center z-[50]">
         <Grid />
-        <div className="flex flex-col items-center min-h-[588px] bg-[#042926] dark:bg-[#4FB9AF] transition-all ease-in-out space-y-[42px]">
+        <div className="flex flex-col items-center min-h-[588px] bg-[#042926] dark:bg-[#4FB9AF] transition-all ease-in-out space-y-[42px] pb-[42px]">
             <p className="text-[34px] delay-150 text-[#B6F0FF] dark:text-black font-krona min-h-[77px] border-b border-[#B6F0FF] dark:border-[#030D0F]">Announcements</p>
-            <div className="flex flex-row justify-center space-x-[64px]">
-                <div className="border border-[#B6F0FF] dark:border-[#030D0F] min-h-[591px] max-w-full md:max-w-[450px] p-2 space-y-[12px]">
-                    <img src="/announcementimage1.png" className="w-full aspect-auto object-cover" />
-                    <p className="font-krona text-[16px] text-[#B6F0FF] dark:text-black">We're making some big decisions, and we want your input! Join us for the online ratification of our Constitution and...</p>
-                </div>
-                <div className="border border-[#B6F0FF] dark:border-[#030D0F] min-h-[591px] min-w-full md:min-w-[450px]">
-                </div>
-                <div className="border border-[#B6F0FF] dark:border-[#030D0F] min-h-[591px] min-w-full md:min-w-[450px]">
-                </div>
+            <div className="flex flex-col md:flex-row justify-center space-y-[42px] md:space-y-0 md:space-x-[64px]">
+                {children}
             </div>
         </div>
         <Grid direction="bottom" />
-    </RegenContext.Provider>
+    </div>
 }
+

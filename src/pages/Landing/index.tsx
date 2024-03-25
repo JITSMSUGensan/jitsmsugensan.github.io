@@ -3,7 +3,8 @@ import PageScreen from "../../components/PageScreen";
 import HeadlineCarousel, { Headline } from "@/components/Carousel";
 import { News, NewsItem } from "@/components/News";
 import Welcome from "@/components/Welcome";
-import Announcements from "@/components/Announcements";
+import { Announcements, Announcement } from "@/components/Announcements";
+import { RadialGradient } from "@/components/Gradient";
 
 export default function Landing() {
     return (
@@ -30,13 +31,22 @@ export default function Landing() {
                 <LandingBackground />
             </PageScreen>
             <PageScreen flush={true}>
-                <img src="/radialgradient1.png" className={`absolute top-0 left-0 translate-y-[80%]`} />
-                <div className="flex flex-col min-h-screen justify-center z-[50]">
-                    <Announcements />
-                </div>
+                <RadialGradient />
+                <Announcements>
+                    <Announcement
+                        imageSrc="/announcementimage1.png"
+                        description="We're making some big decisions, and we want your input! Join us for the online ratification of our Constitution and..."
+                    />
+                    <Announcement
+                        imageSrc="/announcementimage2.png"
+                        description="Celebrating Excellence! A huge round of applause and a heartfelt congratulations to our exceptional.."
+                    />
+                    <Announcement
+                        imageSrc="/announcementimage3.png"
+                        description="A huge round of applause and a heartfelt congratulations to our exceptional Dean's Listers for achieving..."
+                    />
+                </Announcements>
             </PageScreen>
         </>
     )
 }
-
-/* <div className="flex flex-col text-[#010D10] dark:text-white px-[28px] md:px-[62px] md:py-[42px] space-y-[12px]"> */
