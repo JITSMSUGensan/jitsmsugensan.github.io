@@ -6,6 +6,7 @@ import Welcome from "@/components/Welcome";
 import { Announcements, Announcement } from "@/components/Announcements";
 import { RadialGradient } from "@/components/Gradient";
 import Gap from "@/components/Gap";
+import Events, { Event } from "@/components/Events";
 
 export default function Landing() {
   return (
@@ -57,44 +58,12 @@ export default function Landing() {
       </PageScreen>
       <Gap />
       <PageScreen>
-        <div className="flex-1 flex flex-col justify-center">
-          <div className="self-center flex flex-col h-[730px] min-w-[1120px]">
-            <div className="h-[64px] w-full flex flex-row">
-              <div class="relative h-full w-[20px]">
-                <div className="absolute w-[10px] h-[32px] bottom-0 right-0 border-t border-l  border-blue-400"></div>
-              </div>
-              <div className="relative h-full flex-1 flex flex-row">
-                <div className="self-center mx-2 text-center !text-[33px] font-black paint-fsm font-krona text-stroke text-stroke-teal text-fill-transparent text-lg">
-                  EVENTS
-                </div>
-                <div className="h-[32px] w-full border-t  border-blue-400 self-end"></div>
-              </div>
-              <div class="relative h-full w-[20px]">
-                <div className="absolute w-[10px] h-[32px] bottom-0 left-0 border-t border-r  border-blue-400"></div>
-              </div>
-            </div>
-            <div className="flex flex-row flex-1">
-              <div className="relative w-[20px] h-full">
-                <div className="absolute w-[10px] h-full right-0 border-l border-blue-400"></div>
-              </div>
-              <div className="flex-1">Content</div>
-              <div className="relative w-[20px] h-full">
-                <div className="absolute w-[10px] h-full left-0 border-r border-blue-400"></div>
-              </div>
-            </div>
-            <div className="h-[64px] w-full flex flex-row">
-              <div class="relative h-full w-[20px]">
-                <div className="absolute w-[10px] h-[32px] top-0 right-0 border-b border-l   border-blue-400"></div>
-              </div>
-              <div className="relative h-full flex-1">
-                <div className="absolute h-[32px] w-full top-0 border-b border-blue-400"></div>
-              </div>
-              <div class="relative h-full w-[20px]">
-                <div className="absolute w-[10px] h-[32px] top-0 left-0 border-b border-r border-blue-400"></div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Events>
+          <Event title="GENERAL ASSEMBLY" imageSource="/events/event4.png" />
+          <Event title="TEKKIDS" imageSource="/events/event5.png" />
+          <Event title="DO DAY" imageSource="/events/event6.png" />
+          <Event title="IT WEEK" imageSource="/events/event7.png" />
+        </Events>
       </PageScreen>
       <Gap />
     </>
