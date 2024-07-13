@@ -32,13 +32,12 @@ export function App() {
 
   return (
     <>
-      <div className="bg-[#B6F0FF] dark:bg-[#010D10]">
-        <div className="fixed size-full dark:bg-[url('/background.png')] bg-cover"></div>
+      <div className="overflow-x-hidden overflow-y-hidden bg-[#B6F0FF] dark:bg-[#010D10]">
+        <div className="fixed size-full bg-cover dark:bg-[url('/background.png')]"></div>
         <Loading />
         <NavigationBar />
         <Landing />
       </div>
-      <SizeDisplay />
     </>
   );
 }

@@ -7,6 +7,8 @@ import { Announcements, Announcement } from "@/components/Announcements";
 import { RadialGradient } from "@/components/Gradient";
 import Gap from "@/components/Gap";
 import Events, { Event } from "@/components/Events";
+import About from "@/components/About";
+import Organization, { Member } from "@/components/Organization";
 
 export default function Landing() {
   return (
@@ -38,9 +40,10 @@ export default function Landing() {
         </News>
         <LandingBackground />
       </PageScreen>
-      <Gap />
+      <Gap>
+        <RadialGradient translate={{ x: -40, y: -10 }} />
+      </Gap>
       <PageScreen flush={true}>
-        <RadialGradient />
         <Announcements>
           <Announcement
             imageSrc="/announcements/announcementimage1.png"
@@ -56,7 +59,13 @@ export default function Landing() {
           />
         </Announcements>
       </PageScreen>
-      <Gap />
+      <Gap>
+        <RadialGradient
+          position={{ x: 100, y: 0 }}
+          translate={{ x: -50, y: -60 }}
+          scale={1.2}
+        />
+      </Gap>
       <PageScreen>
         <Events>
           <Event title="GENERAL ASSEMBLY" imageSource="/events/event4.png" />
@@ -64,8 +73,51 @@ export default function Landing() {
           <Event title="DO DAY" imageSource="/events/event6.png" />
           <Event title="IT WEEK" imageSource="/events/event7.png" />
         </Events>
+        <Gap className="min-h-[500px]" />
+        <About />
+        <Organization>
+          {Array.from({ length: 10 }).map((_, index) => (
+            <Member
+              key={index}
+              firstname="firstname"
+              lastname="lastname"
+              position="position"
+              imageSource="placeholder-square.png"
+            />
+          ))}
+        </Organization>
+        <Gap className="min-h-[500px]">
+          <RadialGradient
+            position={{ x: 0, y: 100 }}
+            translate={{ x: -50, y: -60 }}
+          />
+        </Gap>
       </PageScreen>
-      <Gap />
+      <div className="align-center relative z-[1000] flex flex-col items-center justify-center space-y-[8px] bg-[#041114] py-[63px] text-center text-[23px]">
+        <p className="font-krona">Contributors</p>
+        <div className="flex min-h-[78px] flex-row justify-center space-x-[343px]">
+          <p className="font-kumbh text-[20px]">Reinhart Logronio</p>
+          <p className="font-kumbh text-[20px]">Carren Mae Yongco</p>
+        </div>
+        <p className="font-kumbh min-h-[39px] text-[20px]">
+          Want to be a contributor?
+        </p>
+        <button className="h-[55px] w-[182px] border border-white text-[24px]">
+          VOLUNTEER NOW
+        </button>
+      </div>
+      <div className="relative z-[2000] flex flex-row justify-center space-x-[80px] bg-[#01090B] px-[352px] py-[32px]">
+        <div className="flex flex-row space-x-[13px]">
+          <img src="icon-email.png" className="h-[24px] w-[26px]" />
+          <p className="font-kumbh text-[16px]">jits@msugensan.edu.ph</p>
+        </div>
+        <div className="flex flex-row space-x-[13px]">
+          <img src="icon-facebook.png" className="h-[24px] w-[24px]" />
+          <img src="icon-instagram.png" className="h-[24px] w-[25px]" />
+          <img src="icon-twitter.png" className="h-[24px] w-[29px]" />
+          <p className="font-kumbh text-[16px]">jitsmsugsc</p>
+        </div>
+      </div>
     </>
   );
 }
