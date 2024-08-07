@@ -15,7 +15,7 @@ export type IntervalArrayContextType = {
 export function App() {
   // const { theme } = useTheme();
 
-  const websiteIsInactive = false;
+  const websiteIsInactive = true;
   const websiteInactivityTitle = "JITS WEBSITE";
   const websiteInactivitySubtitle = "Under Development...";
 
