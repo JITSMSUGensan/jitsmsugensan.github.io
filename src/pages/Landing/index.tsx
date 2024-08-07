@@ -9,6 +9,7 @@ import Gap from "@/components/Gap";
 import Events, { Event } from "@/components/Events";
 import About from "@/components/About";
 import Organization, { Member } from "@/components/Organization";
+import FloaterParallaxScene from "@/components/Floaters/FloaterParallaxScene";
 
 export default function Landing() {
   return (
@@ -67,6 +68,7 @@ export default function Landing() {
         />
       </Gap>
       <PageScreen>
+        <FloaterParallaxScene />
         <Events>
           <Event title="GENERAL ASSEMBLY" imageSource="/events/event4.png" />
           <Event title="TEKKIDS" imageSource="/events/event5.png" />
