@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#071310">
-  <meta name="description" content="Read JITS news and updates at MSU–General Santos. Coming soon.">
+  <meta name="description" content="Read the latest news and updates from JITS MSU–General Santos.">
   <title>News &amp; Updates · JITS MSU-GSC</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,10 +31,9 @@
       </nav>
       <a class="news-link is-current" href="news.html" aria-current="page"><span>News &amp; Updates</span><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M5 4h7v7" /></svg></a>
     </header>
-    <main class="coming-page">
-      <p class="eyebrow"><span class="eyebrow-line"></span> JITS NEWS &amp; UPDATES</p>
-      <h1>Coming soon<span class="accent">.</span></h1>
-      <p class="coming-message">We’re preparing this page. Check back soon for the latest from JITS MSU-GSC.</p>
+    <main class="news-page">
+      <div class="news-page-heading"><p class="eyebrow"><span class="eyebrow-line"></span> JITS NEWS &amp; UPDATES</p><h1>News &amp; Updates<span class="accent">.</span></h1><p class="coming-message">The latest announcements, stories, and updates from JITS MSU-GSC.</p></div>
+      <div class="news-grid news-grid-list" data-news-list aria-live="polite"></div>
     </main>
     <footer class="footer">
       <span class="footer-copyright">© <span id="year">2026</span> JITS MSU-GenSan</span>
@@ -46,5 +45,7 @@
     </footer>
   </div>
   <script src="script.js"></script>
+  <script src="news-data.js"></script>
+  <script src="news.js"></script>
 </body>
 </html>
