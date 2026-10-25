@@ -19,14 +19,17 @@
         <img class="brand-jits" src="img/jitslogo.png" alt="JITS emblem">
         <img class="brand-wordmark" src="img/jitstypographiclogo.png" alt="Junior Information Technology Society">
       </a>
-      <nav class="primary-nav" aria-label="Main navigation">
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="primary-nav" id="mobile-nav" aria-label="Main navigation">
         <a class="nav-link" href="index.html">Home</a>
         <a class="nav-link is-current" href="about.html" aria-current="page">About</a>
         <a class="nav-link" href="services.html">Services</a>
         <a class="nav-link" href="events.html">Events</a>
         <a class="nav-link nav-transparency" href="transparency.html">Transparency</a>
       </nav>
-      <a class="news-link" href="news.html"><span>News &amp; Updates</span><span aria-hidden="true">↗</span></a>
+      <a class="news-link" href="news.html"><span>News &amp; Updates</span><svg class="arrow-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M4 12 12 4M5 4h7v7" /></svg></a>
     </header>
     <main class="coming-page">
       <p class="eyebrow"><span class="eyebrow-line"></span> ABOUT JITS</p>
@@ -34,5 +37,6 @@
       <p class="coming-message">We’re preparing this page. Check back soon for more about JITS MSU-GSC.</p>
     </main>
   </div>
+  <script src="script.js"></script>
 </body>
 </html>
